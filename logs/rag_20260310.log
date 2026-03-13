@@ -1,0 +1,271 @@
+[2026-03-10 12:41:38] [INFO] 知识库服务初始化成功
+[2026-03-10 12:47:38] [INFO] 未知文件 载入向量库成功，共2586个语义片段
+[2026-03-10 12:52:20] [INFO] 知识库服务初始化成功
+[2026-03-10 12:59:28] [INFO] Operating Systems Three Easy Pieces (Z-Lib).pdf 载入向量库成功，共2586个语义片段
+[2026-03-10 13:54:01] [INFO] RAG服务初始化成功
+[2026-03-10 14:16:51] [INFO] RAG服务初始化成功
+[2026-03-10 14:23:17] [INFO] 用户 8db4fa18-85ba-46e5-8ca5-5d9b27f607ba 发起提问：什么是操作系统的三大核心主题（Three Easy Pieces）？...
+[2026-03-10 14:23:18] [ERROR] 用户 8db4fa18-85ba-46e5-8ca5-5d9b27f607ba 流式输出失败：Collection.query() got an unexpected keyword argument 'score_threshold'
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\app_qa.py", line 59, in write_stream
+    for chunk in stream:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3534, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5911, in transform
+    yield from self.bound.transform(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5122, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5101, in _transform
+    for chunk in output.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3534, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\output_parsers\transform.py", line 72, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2288, in _transform_stream_with_config
+    final_input: Input | None = next(input_for_tracing, None)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1544, in transform
+    for ichunk in input:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1544, in transform
+    for ichunk in input:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 4002, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3986, in _transform
+    chunk = AddableDict({step_name: future.result()})
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5122, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2288, in _transform_stream_with_config
+    final_input: Input | None = next(input_for_tracing, None)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5122, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2288, in _transform_stream_with_config
+    final_input: Input | None = next(input_for_tracing, None)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1562, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1149, in stream
+    yield self.invoke(input, config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\retrievers.py", line 222, in invoke
+    result = self._get_relevant_documents(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\vectorstores\base.py", line 1045, in _get_relevant_documents
+    docs = self.vectorstore.similarity_search(query, **kwargs_)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_chroma\vectorstores.py", line 748, in similarity_search
+    docs_and_scores = self.similarity_search_with_score(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_chroma\vectorstores.py", line 849, in similarity_search_with_score
+    results = self.__query_collection(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\utils\utils.py", line 51, in wrapper
+    return func(*args, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_chroma\vectorstores.py", line 477, in __query_collection
+    return self._collection.query(
+TypeError: Collection.query() got an unexpected keyword argument 'score_threshold'
+[2026-03-10 14:46:22] [INFO] RAG服务初始化成功
+[2026-03-10 14:46:38] [INFO] 用户 cf3102b5-67e1-4e66-bdf9-dee01285716b 发起提问：什么是操作系统的三大核心主题（Three Easy Pieces）？...
+[2026-03-10 14:46:38] [ERROR] 用户 cf3102b5-67e1-4e66-bdf9-dee01285716b 流式输出失败：name 'logger' is not defined
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\vector_stores.py", line 33, in custom_window_retriever
+    logger.debug(f"开始检索问题：{query[:50]}...，返回Top-{config.top_k}结果")
+NameError: name 'logger' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\app_qa.py", line 59, in write_stream
+    for chunk in stream:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3534, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5911, in transform
+    yield from self.bound.transform(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5122, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5101, in _transform
+    for chunk in output.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3534, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\output_parsers\transform.py", line 72, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2288, in _transform_stream_with_config
+    final_input: Input | None = next(input_for_tracing, None)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1544, in transform
+    for ichunk in input:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1544, in transform
+    for ichunk in input:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 4002, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3986, in _transform
+    chunk = AddableDict({step_name: future.result()})
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\concurrent\futures\_base.py", line 451, in result
+    return self.__get_result()
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\concurrent\futures\_base.py", line 403, in __get_result
+    raise self._exception
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\concurrent\futures\thread.py", line 58, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5122, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2288, in _transform_stream_with_config
+    final_input: Input | None = next(input_for_tracing, None)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1562, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1149, in stream
+    yield self.invoke(input, config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\retrievers.py", line 226, in invoke
+    result = self._get_relevant_documents(input, **kwargs_)
+  File "D:\Study\毕设\教育助手rag\vector_stores.py", line 68, in _get_relevant_documents
+    return custom_window_retriever(query)
+  File "D:\Study\毕设\教育助手rag\vector_stores.py", line 61, in custom_window_retriever
+    logger.error(f"检索过程异常：{str(e)}", exc_info=True)
+NameError: name 'logger' is not defined
+[2026-03-10 14:48:22] [INFO] RAG服务初始化成功
+[2026-03-10 14:48:33] [INFO] 用户 603b0df4-94ec-4c2d-afe1-ac1a5d4445df 发起提问：什么是操作系统的三大核心主题（Three Easy Pieces）？...
+[2026-03-10 14:48:34] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 14:48:34] [ERROR] 检索过程异常：module 'config_data' has no attribute 'get_current_time'
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\vector_stores.py", line 56, in custom_window_retriever
+    "retrieval_time": config.get_current_time()  # 可选：添加检索时间
+AttributeError: module 'config_data' has no attribute 'get_current_time'
+[2026-03-10 14:48:34] [ERROR] 用户 603b0df4-94ec-4c2d-afe1-ac1a5d4445df 流式输出失败："Input to ChatPromptTemplate is missing variables {'history'}.  Expected: ['context', 'history', 'input'] Received: ['input', 'context']\nNote: if you intended {history} to be part of the string and not a variable, please escape it with double curly braces like: '{{history}}'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT "
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\app_qa.py", line 59, in write_stream
+    for chunk in stream:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3534, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5911, in transform
+    yield from self.bound.transform(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5122, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5101, in _transform
+    for chunk in output.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 5872, in stream
+    yield from self.bound.stream(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3534, in stream
+    yield from self.transform(iter([input]), config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3520, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2326, in _transform_stream_with_config
+    chunk: Output = context.run(next, iterator)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 3486, in _transform
+    yield from final_pipeline
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\output_parsers\transform.py", line 72, in transform
+    yield from self._transform_stream_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2288, in _transform_stream_with_config
+    final_input: Input | None = next(input_for_tracing, None)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1544, in transform
+    for ichunk in input:
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1562, in transform
+    yield from self.stream(final, config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 1149, in stream
+    yield self.invoke(input, config, **kwargs)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\prompts\base.py", line 223, in invoke
+    return self._call_with_config(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\prompts\base.py", line 196, in _format_prompt_with_error_handling
+    inner_input_ = self._validate_input(inner_input)
+  File "D:\ProgramFiles\anaconda3\envs\myenv\lib\site-packages\langchain_core\prompts\base.py", line 190, in _validate_input
+    raise KeyError(
+KeyError: "Input to ChatPromptTemplate is missing variables {'history'}.  Expected: ['context', 'history', 'input'] Received: ['input', 'context']\nNote: if you intended {history} to be part of the string and not a variable, please escape it with double curly braces like: '{{history}}'.\nFor troubleshooting, visit: https://docs.langchain.com/oss/python/langchain/errors/INVALID_PROMPT_INPUT "
+[2026-03-10 15:08:23] [INFO] RAG服务初始化成功
+[2026-03-10 15:08:59] [INFO] 用户 f9218a11-b083-44bb-a3af-b8da9c1e7ce0 发起提问：什么是操作系统的三大核心主题（Three Easy Pieces）？...
+[2026-03-10 15:09:00] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 15:09:00] [ERROR] 检索过程异常：module 'config_data' has no attribute 'get_current_time'
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\vector_stores.py", line 56, in custom_window_retriever
+    "retrieval_time": config.get_current_time()  # 可选：添加检索时间
+AttributeError: module 'config_data' has no attribute 'get_current_time'
+[2026-03-10 15:09:07] [INFO] 用户 f9218a11-b083-44bb-a3af-b8da9c1e7ce0 问答流式输出完成
+[2026-03-10 15:10:00] [INFO] 用户 f9218a11-b083-44bb-a3af-b8da9c1e7ce0 发起提问：进程（Process）的核心定义是什么？它的机器状态包含哪些关键部分？...
+[2026-03-10 15:10:01] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 15:10:01] [ERROR] 检索过程异常：module 'config_data' has no attribute 'get_current_time'
+Traceback (most recent call last):
+  File "D:\Study\毕设\教育助手rag\vector_stores.py", line 56, in custom_window_retriever
+    "retrieval_time": config.get_current_time()  # 可选：添加检索时间
+AttributeError: module 'config_data' has no attribute 'get_current_time'
+[2026-03-10 15:10:09] [INFO] 用户 f9218a11-b083-44bb-a3af-b8da9c1e7ce0 问答流式输出完成
+[2026-03-10 15:20:27] [INFO] RAG服务初始化成功
+[2026-03-10 15:20:34] [INFO] 用户 ff1ab2d4-86f9-48ad-9974-88921b9b43b6 发起提问：进程（Process）的核心定义是什么？它的机器状态包含哪些关键部分？...
+[2026-03-10 15:20:35] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 15:20:41] [INFO] 用户 ff1ab2d4-86f9-48ad-9974-88921b9b43b6 问答流式输出完成
+[2026-03-10 15:21:14] [INFO] 用户 ff1ab2d4-86f9-48ad-9974-88921b9b43b6 发起提问：什么是操作系统的三大核心主题（Three Easy Pieces）？...
+[2026-03-10 15:21:15] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 15:21:17] [INFO] 用户 ff1ab2d4-86f9-48ad-9974-88921b9b43b6 问答流式输出完成
+[2026-03-10 16:40:17] [INFO] RAG服务初始化成功
+[2026-03-10 16:40:29] [INFO] 用户 74910002-c5f3-48f2-8880-1fd8e6445972 提问：进程（Process）的核心定义是什么？它的机器状态包含哪些关键部分？...
+[2026-03-10 16:40:30] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 16:40:36] [INFO] 用户 74910002-c5f3-48f2-8880-1fd8e6445972 回答生成完成
+[2026-03-10 16:41:28] [INFO] 用户 74910002-c5f3-48f2-8880-1fd8e6445972 提问：什么是操作系统的三大核心主题（Three Easy Pieces）？...
+[2026-03-10 16:41:28] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-03-10 16:41:36] [INFO] 用户 74910002-c5f3-48f2-8880-1fd8e6445972 回答生成完成
+[2026-03-10 16:42:01] [INFO] RAG服务初始化成功
