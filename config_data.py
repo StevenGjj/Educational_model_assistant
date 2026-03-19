@@ -38,8 +38,6 @@ chat_model_name = "qwen3-max"
 # 操作员名称（入库元数据用）
 OPERATOR_NAME = "高进"
 # RAG提示词模板（可根据需求修改）
-PROMPT_TEMPLATE = """以我提供的已知参考资料为主，简洁和专业的回答用户问题。
-参考资料:{context}。并且我提供用户的对话历史记录，如下："""
 
 # ===================== 会话配置 =====================
 # 动态session_id（运行时填充，无需修改）
@@ -57,10 +55,6 @@ def get_api_key():
 def get_operator_name():
     """获取操作员名称"""
     return os.getenv("OPERATOR_NAME", OPERATOR_NAME)
-
-def get_prompt_template():
-    """获取提示词模板"""
-    return os.getenv("PROMPT_TEMPLATE", PROMPT_TEMPLATE)
 
 def get_current_time():
     return datetime.now().strftime("%Y-%m-%d %H:%M:%S")
