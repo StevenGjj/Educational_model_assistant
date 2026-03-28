@@ -20,6 +20,7 @@ class VectorStoreService(object):
             chunk_overlap=config.window_chunk_overlap,
             separators=config.separators
         )
+        self.collection = self.vector_store._collection
 
 
     def get_retriever(self):
@@ -69,3 +70,21 @@ class VectorStoreService(object):
 
         return WindowRetriever()
 
+    def list_all_sources(self) -> list[str]:
+        """获取向量库中所有不重复的文档来源（文件名）"""
+        # 从 Chroma 集合中获取所有元数据，提取 source 并去重
+        all_metadata = self.collection.get(include=["metadatas"])["metadatas"]
+        sources = list({meta.get("source", "未知文档") for meta in all_metadata if meta})
+        return sorted(sources)
+
+    def get_document_content_by_source(self, source: str) -> str:
+        """根据 source 从向量库中获取对应文档的全部拼接内容"""
+        # 按 source 过滤文档
+        results = self.collection.get(
+            where={"source": source},
+            include=["documents"]
+        )
+        if not results["documents"]:
+            return ""
+        # 将所有片段拼接为完整内容
+        return "\n".join(results["documents"])

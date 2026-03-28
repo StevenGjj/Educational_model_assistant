@@ -14,6 +14,7 @@ st.set_page_config(
     layout="wide"
 )
 
+
 # 初始化全局会话（单例RAG/知识库服务+唯一session_id）
 def init_global_session():
     # 初始化RAG服务（问答/匹配/出题/评分）
@@ -45,6 +46,7 @@ def init_global_session():
     # 初始化临时文件存储（文档匹配用）
     if "temp_docs" not in st.session_state:
         st.session_state["temp_docs"] = {"doc_a": "", "doc_b": ""}
+
 
 # 工具函数：加载本地文件为文本（文档匹配用，支持TXT/PDF）
 def load_file_to_text(file):
@@ -84,6 +86,7 @@ def load_file_to_text(file):
         st.error(f"文件解析失败：{str(e)}")
         return ""
 
+
 # 功能1：知识问答（原有功能，保留流式输出+历史对话）
 def tab_qa():
     st.subheader("📝 知识问答（基于知识库）")
@@ -111,10 +114,12 @@ def tab_qa():
                 )
                 # 流式写入回答
                 full_answer = []
+
                 def stream_answer():
                     for chunk in res_stream:
                         full_answer.append(chunk)
                         yield chunk
+
                 st.chat_message("assistant").write_stream(stream_answer)
                 # 记录完整回答
                 st.session_state["message"].append({"role": "assistant", "content": "".join(full_answer)})
@@ -125,45 +130,72 @@ def tab_qa():
                 st.session_state["message"].append({"role": "assistant", "content": error_msg})
                 logger.error(f"用户{session_id}【知识问答】异常：{e}", exc_info=True)
 
-# 功能2：文档匹配度分析（课件↔教材，支持TXT/PDF上传）
+
+# 功能2：文档匹配度分析（从向量库选择文件对比，无需上传）
 def tab_doc_match():
-    st.subheader("📑 课件&教材知识点匹配度分析")
-    st.caption("支持TXT/PDF格式，上传后自动分析知识点重合度并给出教学建议")
-    # 分栏上传两个文件
+    st.subheader("📑 向量库文档匹配度分析")
+    st.caption("从已上传知识库中选择两个文档，分析知识点匹配度")
+
+    # 初始化向量库服务（如果未初始化）
+    if "vector_service" not in st.session_state:
+        from vector_stores import VectorStoreService
+        from langchain_community.embeddings import DashScopeEmbeddings
+        import config_data as config
+        st.session_state["vector_service"] = VectorStoreService(
+            embedding=DashScopeEmbeddings(model=config.embedding_model_name)
+        )
+
+    # 获取所有文档来源
+    sources = st.session_state["vector_service"].list_all_sources()
+    if not sources:
+        st.warning("⚠️ 向量库中暂无文档，请先上传课件/教材到知识库")
+        return
+
+    # 选择两个待比较的文档
     col1, col2 = st.columns(2)
     with col1:
-        doc_a = st.file_uploader("上传【文档A】（如：课件）", type=["txt", "pdf"], key="doc_a")
-        if doc_a:
-            st.session_state["temp_docs"]["doc_a"] = load_file_to_text(doc_a)
-            st.success(f"✅ 已加载：{doc_a.name}")
+        doc_a_source = st.selectbox("选择【文档A】", options=sources, key="doc_a_source")
     with col2:
-        doc_b = st.file_uploader("上传【文档B】（如：教材）", type=["txt", "pdf"], key="doc_b")
-        if doc_b:
-            st.session_state["temp_docs"]["doc_b"] = load_file_to_text(doc_b)
-            st.success(f"✅ 已加载：{doc_b.name}")
+        doc_b_source = st.selectbox("选择【文档B】", options=sources, key="doc_b_source")
+
     # 分析按钮
     if st.button("🔍 开始分析", type="primary", key="match_analyse"):
-        doc_a_text = st.session_state["temp_docs"]["doc_a"]
-        doc_b_text = st.session_state["temp_docs"]["doc_b"]
-        if not doc_a_text or not doc_b_text:
-            st.warning("⚠️ 请先上传两个有效文件（内容不能为空）")
+        if doc_a_source == doc_b_source:
+            st.warning("⚠️ 请选择两个不同的文档进行比较")
             return
+
+        with st.spinner("正在从向量库加载文档内容..."):
+            # 从向量库获取文档内容
+            doc_a_content = st.session_state["vector_service"].get_document_content_by_source(doc_a_source)
+            doc_b_content = st.session_state["vector_service"].get_document_content_by_source(doc_b_source)
+
+        if not doc_a_content or not doc_b_content:
+            st.error("❌ 选中的文档内容为空，请检查知识库")
+            return
+
+        # 处理超长文本（适配通义千问输入限制）
+        MAX_INPUT_LENGTH = 250000
+        doc_a_content = doc_a_content[:MAX_INPUT_LENGTH//2]
+        doc_b_content = doc_b_content[:MAX_INPUT_LENGTH//2]
+        if len(doc_a_content + doc_b_content) > MAX_INPUT_LENGTH:
+            st.info(f"⚠️ 文档内容过长，已自动截断至 {MAX_INPUT_LENGTH} 字符进行分析")
+
         with st.spinner("正在分析知识点匹配度..."):
             try:
-                logger.info("开始执行知识点匹配度分析")
-                # 调用RAG的文档匹配链
+                logger.info(f"开始分析文档匹配：{doc_a_source} vs {doc_b_source}")
+                # 调用匹配分析链
                 result = st.session_state["rag"].doc_match_chain.invoke({
-                    "doc_a_content": doc_a_text,
-                    "doc_b_content": doc_b_text
+                    "doc_a_content": doc_a_content,
+                    "doc_b_content": doc_b_content
                 })
-                # 展示结果
                 st.divider()
-                st.markdown("### 📊 分析结果")
+                st.markdown(f"### 📊 匹配分析结果：{doc_a_source} ↔ {doc_b_source}")
                 st.write(result)
-                logger.info("知识点匹配度分析完成")
+                logger.info("文档匹配分析完成")
             except Exception as e:
                 st.error(f"分析失败：{str(e)}")
                 logger.error(f"文档匹配分析异常：{e}", exc_info=True)
+
 
 # 功能3：自动生成题目（基于知识库，支持自定义题型/难度）
 def tab_gen_question():
@@ -196,6 +228,7 @@ def tab_gen_question():
                 st.error(f"题目生成失败：{str(e)}")
                 logger.error(f"自动出题异常：{e}", exc_info=True)
 
+
 # 功能4：自动生成评分标准（基于知识库+用户题目）
 def tab_gen_criteria():
     st.subheader("⚖️ 题目评分标准&标准答案生成")
@@ -227,6 +260,7 @@ def tab_gen_criteria():
                 st.error(f"评分标准生成失败：{str(e)}")
                 logger.error(f"生成评分标准异常：{e}", exc_info=True)
 
+
 # 主函数：标签页整合所有功能
 def main():
     init_global_session()
@@ -242,6 +276,7 @@ def main():
         tab_gen_question()
     with tab4:
         tab_gen_criteria()
+
 
 if __name__ == "__main__":
     main()
