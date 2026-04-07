@@ -5,6 +5,7 @@ from langchain_chroma import Chroma
 from langchain_community.embeddings import DashScopeEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 import config_data as config
+from model_factory import get_embeddings_model
 
 # 导入日志（仅用于最终结果提示）
 from logger import logger
@@ -48,13 +49,16 @@ def save_md5(md5_hex: str):
 
 # ===================== 知识库服务核心类 =====================
 class KnowledgeBaseService(object):
-    def __init__(self):
-        """初始化知识库服务"""
+    def __init__(self, embedding_model_name=None):
+        """
+        初始化知识库服务
+        :param embedding_model_name: 嵌入模型名称，默认使用配置文件的模型
+        """
         try:
-            # 初始化嵌入模型
-            self.embeddings = DashScopeEmbeddings(
-                model=config.embedding_model_name,
-            )
+            # 初始化嵌入模型（使用模型工厂）
+            embedding_name = embedding_model_name or config.embedding_model_name
+            self.embeddings = get_embeddings_model(embedding_name)
+            self.embedding_model_name = embedding_name
             # 初始化向量库
             self.chroma = Chroma(
                 collection_name=config.collection_name,

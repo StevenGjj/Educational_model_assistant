@@ -1,0 +1,352 @@
+[2026-04-07 16:06:21] [INFO] 知识库服务初始化成功
+[2026-04-07 16:14:11] [INFO] Operating Systems Three Easy Pieces (Z-Lib).pdf 载入向量库成功，共2586个语义片段
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 10 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 18 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 28 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 36 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 44 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 51 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 53 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 55 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 63 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 65 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 77 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 79 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 89 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 92 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 96 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 108 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 118 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 142 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 148 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 164 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 195 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 282 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 318 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 334 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 340 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 356 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 384 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 388 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 395 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 417 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 517 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 519 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 521 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 592 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 692 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 824 0 (offset 0)
+[2026-04-07 16:14:25] [WARNING] Ignoring wrong pointing object 843 0 (offset 0)
+[2026-04-07 16:14:43] [INFO] L03 Processes(1).pdf 载入向量库成功，共61个语义片段
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 10 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 18 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 20 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 23 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 32 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 36 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 38 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 51 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 53 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 89 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 101 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 108 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 111 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 122 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 136 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 139 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 152 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 155 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 165 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 178 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 181 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 193 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 208 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 211 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 221 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 234 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 237 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 248 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 261 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 264 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 313 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 320 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 330 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 333 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 336 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 365 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 367 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 381 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 387 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 393 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 417 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 419 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 421 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 447 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 467 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 469 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 471 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 499 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 565 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 571 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 579 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 606 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 612 0 (offset 0)
+[2026-04-07 16:14:43] [WARNING] Ignoring wrong pointing object 748 0 (offset 0)
+[2026-04-07 16:14:53] [INFO] L5 Synchronization(1).pdf 载入向量库成功，共65个语义片段
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 10 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 18 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 20 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 28 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 30 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 57 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 60 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 63 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 67 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 82 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 84 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 90 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 98 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 105 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 123 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 125 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 127 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 129 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 131 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 165 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 190 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 192 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 194 0 (offset 0)
+[2026-04-07 16:14:53] [WARNING] Ignoring wrong pointing object 256 0 (offset 0)
+[2026-04-07 16:14:56] [INFO] L7 Address Translation.pdf 载入向量库成功，共19个语义片段
+[2026-04-07 16:16:05] [INFO] RAG服务所有链初始化成功
+[2026-04-07 16:16:05] [INFO] RAG服务全局初始化成功
+[2026-04-07 16:16:05] [INFO] 知识库服务全局初始化成功
+[2026-04-07 16:16:38] [INFO] 用户0f2d27d6-83b9-4d4a-ab78-fbde00597c75【知识问答】提问：进程调度的核心算法有哪些？...
+[2026-04-07 16:16:39] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-04-07 16:16:48] [INFO] 用户0f2d27d6-83b9-4d4a-ab78-fbde00597c75【知识问答】回答生成完成
+[2026-04-07 16:17:16] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 16:18:02] [INFO] 文档匹配分析完成
+[2026-04-07 16:19:59] [INFO] 用户0f2d27d6-83b9-4d4a-ab78-fbde00597c75【自动出题】要求：生成5道操作系统中等难度的简答题，围绕进程管理...
+[2026-04-07 16:20:00] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-04-07 16:20:07] [INFO] 用户0f2d27d6-83b9-4d4a-ab78-fbde00597c75【自动出题】完成
+[2026-04-07 16:20:58] [INFO] 用户0f2d27d6-83b9-4d4a-ab78-fbde00597c75【生成评分标准】题目：在 uCore 操作系统中，进程控制块（proc_struct）中的 need_resched 字段...
+[2026-04-07 16:20:58] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-04-07 16:21:18] [INFO] 用户0f2d27d6-83b9-4d4a-ab78-fbde00597c75【生成评分标准】完成
+[2026-04-07 16:35:17] [INFO] 知识库服务初始化成功
+[2026-04-07 16:51:27] [INFO] 知识库服务初始化成功
+[2026-04-07 16:59:00] [INFO] SUSTechOS 载入向量库成功，共2312个语义片段
+[2026-04-07 17:00:31] [INFO] RAG服务所有链初始化成功
+[2026-04-07 17:00:31] [INFO] RAG服务全局初始化成功
+[2026-04-07 17:00:31] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:03:43] [INFO] 用户f417bd7e-26fd-4f4b-b05d-d7e43ed77a82【代码出题】要求：生成3道关于进程创建的中等难度编程题，参考proc.c中的fork实现...
+[2026-04-07 17:03:44] [INFO] 窗口分割完成，生成2个完整语义片段
+[2026-04-07 17:04:10] [INFO] 用户f417bd7e-26fd-4f4b-b05d-d7e43ed77a82【代码出题】完成
+[2026-04-07 17:24:16] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:24:16] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:24:16] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:42:26] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:42:26] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:42:26] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:43:02] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 17:43:02] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 17:43:02] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:43:04] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:43:04] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:43:04] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:43:11] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 17:43:54] [INFO] 文档匹配分析完成
+[2026-04-07 17:45:20] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 17:45:20] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 17:45:20] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:45:22] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 17:45:22] [ERROR] 文档匹配分析异常：'tuple' object has no attribute 'get'
+Traceback (most recent call last):
+  File "D:\毕设\Educational_model_assistant\app_qa.py", line 189, in tab_doc_match
+    result = st.session_state["rag"].doc_match_chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 3157, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 5018, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 4875, in _invoke
+    output = call_func_with_variable_args(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\毕设\Educational_model_assistant\model_factory.py", line 28, in __call__
+    role = msg.type if hasattr(msg, 'type') else msg.get('type', 'user')
+                                                 ^^^^^^^
+AttributeError: 'tuple' object has no attribute 'get'
+[2026-04-07 17:51:00] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:51:00] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:51:00] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:51:18] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:51:18] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:51:18] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:51:38] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 17:52:21] [INFO] 文档匹配分析完成
+[2026-04-07 17:53:14] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 17:53:14] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 17:53:14] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:53:17] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 17:53:18] [ERROR] 文档匹配分析异常：MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+Traceback (most recent call last):
+  File "D:\毕设\Educational_model_assistant\app_qa.py", line 189, in tab_doc_match
+    result = st.session_state["rag"].doc_match_chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 3157, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 5018, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 4875, in _invoke
+    output = call_func_with_variable_args(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\毕设\Educational_model_assistant\model_factory.py", line 78, in __call__
+    raise RuntimeError(f"MiniMax API调用失败: {result}")
+RuntimeError: MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+[2026-04-07 17:56:17] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:56:17] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:56:17] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:56:32] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 17:56:32] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 17:56:32] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:56:37] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 17:56:38] [ERROR] 文档匹配分析异常：MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+Traceback (most recent call last):
+  File "D:\毕设\Educational_model_assistant\app_qa.py", line 189, in tab_doc_match
+    result = st.session_state["rag"].doc_match_chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 3157, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 5018, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 4875, in _invoke
+    output = call_func_with_variable_args(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\毕设\Educational_model_assistant\model_factory.py", line 88, in __call__
+    raise RuntimeError(f"MiniMax API调用失败: {result}")
+RuntimeError: MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+[2026-04-07 17:59:07] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 17:59:07] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 17:59:07] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:59:23] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 17:59:23] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 17:59:23] [INFO] 知识库服务全局初始化成功
+[2026-04-07 17:59:31] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 17:59:32] [ERROR] 文档匹配分析异常：MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+Traceback (most recent call last):
+  File "D:\毕设\Educational_model_assistant\app_qa.py", line 189, in tab_doc_match
+    result = st.session_state["rag"].doc_match_chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 3157, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 5018, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 4875, in _invoke
+    output = call_func_with_variable_args(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\毕设\Educational_model_assistant\model_factory.py", line 89, in __call__
+    raise RuntimeError(f"MiniMax API调用失败: {result}")
+RuntimeError: MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+[2026-04-07 18:01:30] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 18:01:30] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 18:01:30] [INFO] 知识库服务全局初始化成功
+[2026-04-07 18:01:45] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 18:01:45] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 18:01:45] [INFO] 知识库服务全局初始化成功
+[2026-04-07 18:01:50] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 18:01:51] [ERROR] 文档匹配分析异常：MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+Traceback (most recent call last):
+  File "D:\毕设\Educational_model_assistant\app_qa.py", line 189, in tab_doc_match
+    result = st.session_state["rag"].doc_match_chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 3157, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 5018, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 4875, in _invoke
+    output = call_func_with_variable_args(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\毕设\Educational_model_assistant\model_factory.py", line 93, in __call__
+    raise RuntimeError(f"MiniMax API调用失败: {result}")
+RuntimeError: MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+[2026-04-07 18:08:07] [INFO] RAG服务初始化成功，当前使用模型: qwen3-max
+[2026-04-07 18:08:07] [INFO] RAG服务全局初始化成功，使用模型: 通义千问
+[2026-04-07 18:08:07] [INFO] 知识库服务全局初始化成功
+[2026-04-07 18:08:21] [INFO] RAG服务初始化成功，当前使用模型: MiniMax-M2.7
+[2026-04-07 18:08:21] [INFO] RAG服务全局初始化成功，使用模型: MiniMax M2.7
+[2026-04-07 18:08:21] [INFO] 知识库服务全局初始化成功
+[2026-04-07 18:08:24] [INFO] 开始分析文档匹配：L03 Processes(1).pdf vs Operating Systems Three Easy Pieces (Z-Lib).pdf
+[2026-04-07 18:08:25] [ERROR] 文档匹配分析异常：MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}
+Traceback (most recent call last):
+  File "D:\毕设\Educational_model_assistant\app_qa.py", line 189, in tab_doc_match
+    result = st.session_state["rag"].doc_match_chain.invoke({
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 3157, in invoke
+    input_ = context.run(step.invoke, input_, config)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 5018, in invoke
+    return self._call_with_config(
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 2060, in _call_with_config
+    context.run(
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\base.py", line 4875, in _invoke
+    output = call_func_with_variable_args(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\anaconda\envs\edu_assistant\Lib\site-packages\langchain_core\runnables\config.py", line 461, in call_func_with_variable_args
+    return func(input, **kwargs)  # type: ignore[call-arg]
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\毕设\Educational_model_assistant\model_factory.py", line 93, in __call__
+    raise RuntimeError(f"MiniMax API调用失败: {result}")
+RuntimeError: MiniMax API调用失败: {'base_resp': {'status_code': 1004, 'status_msg': "login fail: Please carry the API secret key in the 'Authorization' field of the request header"}}

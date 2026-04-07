@@ -11,6 +11,7 @@ from langchain_community.chat_message_histories import FileChatMessageHistory
 import os
 from prompts import *
 from logger import logger
+from model_factory import get_chat_model, get_embeddings_model
 
 
 def print_prompt(prompt):
@@ -23,19 +24,34 @@ def print_prompt(prompt):
 
 
 class RagService(object):
-    def __init__(self):
-        # 初始化基础组件
-        self.embedding = DashScopeEmbeddings(model=config.embedding_model_name)
+    def __init__(self, model_name=None):
+        """
+        初始化RAG服务
+        :param model_name: 模型名称，默认使用配置文件中的模型
+        注意：向量嵌入始终使用通义千问 text-embedding-v4，确保向量库共用
+        """
+        # 获取对话模型配置
+        if model_name and model_name in config.AVAILABLE_MODELS:
+            model_config = config.AVAILABLE_MODELS[model_name]
+            self.current_model_name = model_config["chat_model_name"]
+        else:
+            self.current_model_name = config.chat_model_name
+        
+        # 嵌入模型始终使用通义千问（确保向量库共用）
+        self.embedding = get_embeddings_model()
         self.vector_service = VectorStoreService(embedding=self.embedding)
         self.retriever = self.vector_service.get_retriever()
-        self.chat_model = ChatTongyi(model=config.chat_model_name)
+        self.chat_model = get_chat_model(self.current_model_name)
         self.parser = StrOutputParser()  # 统一输出解析器
         # 初始化4条核心链
         self.qa_chain = self._get_qa_chain()  # 原有知识问答链
         self.doc_match_chain = self._get_doc_match_chain()  # 文档匹配度分析链
         self.gen_question_chain = self._get_gen_question_chain()  # 自动出题链
         self.gen_criteria_chain = self._get_gen_criteria_chain()  # 评分标准生成链
-        logger.info("RAG服务所有链初始化成功")
+        # 新增：代码相关链
+        self.code_question_chain = self._get_code_question_chain()  # 代码出题链
+        self.code_analysis_chain = self._get_code_analysis_chain()  # 代码分析链
+        logger.info(f"RAG服务初始化成功，当前使用模型: {self.current_model_name}")
 
     def _get_qa_chain(self):
         """原有知识问答链（保留历史对话+检索上下文）"""
@@ -162,3 +178,61 @@ class RagService(object):
         except Exception as e:
             logger.error(f"清空对话历史失败：{str(e)}")
             return False
+
+    def _get_code_question_chain(self):
+        """代码出题链（基于检索的代码资料）"""
+
+        def format_document(docs: list[Document]):
+            if not docs:
+                return "无相关代码资料"
+            return "\n".join([doc.page_content for doc in docs])
+
+        def format_for_prompt_template(value):
+            return {
+                "input": value["input"],
+                "context": value["context"],
+            }
+
+        chain = (
+                {
+                    "input": RunnablePassthrough(),
+                    "context": RunnablePassthrough() | self.retriever | format_document
+                } | RunnableLambda(format_for_prompt_template)
+                | ChatPromptTemplate.from_messages([
+            ("system", CODE_QUESTION_PROMPT),
+            ("user", "根据代码资料生成编程题目：{input}")
+        ])
+                | print_prompt
+                | self.chat_model
+                | self.parser
+        )
+        return chain
+
+    def _get_code_analysis_chain(self):
+        """代码分析链（分析代码功能/输出/知识点）"""
+
+        def format_document(docs: list[Document]):
+            if not docs:
+                return "无相关代码资料"
+            return "\n".join([doc.page_content for doc in docs])
+
+        def format_for_prompt_template(value):
+            return {
+                "input": value["input"],
+                "context": value["context"],
+            }
+
+        chain = (
+                {
+                    "input": RunnablePassthrough(),
+                    "context": RunnablePassthrough() | self.retriever | format_document
+                } | RunnableLambda(format_for_prompt_template)
+                | ChatPromptTemplate.from_messages([
+            ("system", CODE_ANALYSIS_PROMPT),
+            ("user", "请分析以下代码：{input}")
+        ])
+                | print_prompt
+                | self.chat_model
+                | self.parser
+        )
+        return chain

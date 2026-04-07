@@ -17,9 +17,10 @@ st.set_page_config(
 
 # 初始化全局会话（单例RAG/知识库服务+唯一session_id）
 def init_global_session():
-    # 初始化RAG服务（问答/匹配/出题/评分）
+    # 初始化RAG服务（固定使用通义千问）
     if "rag" not in st.session_state:
         try:
+            # 暂时固定使用通义千问模型
             st.session_state["rag"] = RagService()
             logger.info("RAG服务全局初始化成功")
         except Exception as e:
@@ -261,13 +262,111 @@ def tab_gen_criteria():
                 logger.error(f"生成评分标准异常：{e}", exc_info=True)
 
 
+# 功能5：代码出题（基于知识库中的代码文件）
+def tab_code_question():
+    st.subheader("💻 基于代码知识库自动生成题目")
+    st.caption("根据知识库中的代码资料，生成编程题目（代码填空/改错/分析/实现）")
+    # 自定义出题要求
+    prompt = st.text_area(
+        "输入出题要求（示例：生成3道Python中等难度的编程题，围绕列表操作）",
+        placeholder="请说明题型、数量、难度、编程语言、知识点范围...",
+        height=100,
+        key="code_question_prompt"
+    )
+    # 生成按钮
+    if st.button("✏️ 生成编程题目", type="primary", key="code_question"):
+        if not prompt or prompt.strip() == "":
+            st.warning("⚠️ 请输入出题要求")
+            return
+        with st.spinner("正在根据代码知识库生成编程题目..."):
+            try:
+                session_id = st.session_state["session_config"]["configurable"]["session_id"]
+                logger.info(f"用户{session_id}【代码出题】要求：{prompt[:50]}...")
+                # 调用RAG的代码出题链
+                result = st.session_state["rag"].code_question_chain.invoke(prompt)
+                # 展示结果
+                st.divider()
+                st.markdown("### 💻 生成的编程题目")
+                st.write(result)
+                logger.info(f"用户{session_id}【代码出题】完成")
+            except Exception as e:
+                st.error(f"编程题目生成失败：{str(e)}")
+                logger.error(f"代码出题异常：{e}", exc_info=True)
+
+
+# 功能6：代码分析（分析知识库中的代码文件）
+def tab_code_analysis():
+    st.subheader("🔍 代码分析（基于知识库）")
+    st.caption("分析知识库中的代码文件，提取功能概述、算法思路、知识点等")
+    # 输入代码相关问题或指定分析要求
+    prompt = st.text_area(
+        "输入分析要求（示例：分析代码中使用的算法/数据结构/输出结果）",
+        placeholder="请说明想要分析的方向，如：分析代码的算法思路、找出关键语法点...",
+        height=100,
+        key="code_analysis_prompt"
+    )
+    # 分析按钮
+    if st.button("🔬 分析代码", type="primary", key="code_analysis"):
+        if not prompt or prompt.strip() == "":
+            st.warning("⚠️ 请输入分析要求")
+            return
+        with st.spinner("正在分析代码..."):
+            try:
+                session_id = st.session_state["session_config"]["configurable"]["session_id"]
+                logger.info(f"用户{session_id}【代码分析】要求：{prompt[:50]}...")
+                # 调用RAG的代码分析链
+                result = st.session_state["rag"].code_analysis_chain.invoke(prompt)
+                # 展示结果
+                st.divider()
+                st.markdown("### 🔍 代码分析结果")
+                st.write(result)
+                logger.info(f"用户{session_id}【代码分析】完成")
+            except Exception as e:
+                st.error(f"代码分析失败：{str(e)}")
+                logger.error(f"代码分析异常：{e}", exc_info=True)
+
+
 # 主函数：标签页整合所有功能
 def main():
+    # ===== 模型切换功能暂时禁用 =====
+    # import config_data as config_model
+    # model_options = list(config_model.AVAILABLE_MODELS.keys())
+    
+    # 侧边栏：模型选择
+    # st.sidebar.title("⚙️ 模型设置")
+    # selected_model = st.sidebar.selectbox(
+    #     "选择大语言模型：",
+    #     options=model_options,
+    #     index=0,
+    #     key="model_selector"
+    # )
+    
+    # 暂时固定使用通义千问
+    selected_model = "通义千问"
+    
+    # 如果模型变化了，重新初始化
+    # if "selected_model" not in st.session_state or st.session_state.get("selected_model") != selected_model:
+    #     st.session_state["selected_model"] = selected_model
+    #     # 清除现有的RAG服务，触发重新初始化
+    #     if "rag" in st.session_state:
+    #         del st.session_state["rag"]
+    #     if "kb_service" in st.session_state:
+    #         del st.session_state["kb_service"]
+    #     if "vector_service" in st.session_state:
+    #         del st.session_state["vector_service"]
+    
+    # 显示当前使用的模型
+    # st.sidebar.markdown(f"当前使用：**{selected_model}**")
+    # st.sidebar.divider()
+    
+    # 初始化全局会话
     init_global_session()
     st.title("📚 教育智能助手")
     st.divider()
-    # 创建4个功能标签页
-    tab1, tab2, tab3, tab4 = st.tabs(["知识问答", "文档匹配分析", "自动生成题目", "评分标准生成"])
+    # 创建6个功能标签页
+    tab1, tab2, tab3, tab4, tab5, tab6 = st.tabs([
+        "知识问答", "文档匹配分析", "自动生成题目", "评分标准生成", "代码出题", "代码分析"
+    ])
     with tab1:
         tab_qa()
     with tab2:
@@ -276,6 +375,10 @@ def main():
         tab_gen_question()
     with tab4:
         tab_gen_criteria()
+    with tab5:
+        tab_code_question()
+    with tab6:
+        tab_code_analysis()
 
 
 if __name__ == "__main__":

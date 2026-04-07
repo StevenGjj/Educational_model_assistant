@@ -28,11 +28,29 @@ separators = ["\n\n", "\n", "。", "！", "？", "；", "，", " ", ""]
 
 # ===================== 模型配置 =====================
 # 阿里云通义千问API密钥（★ 请替换为你的实际密钥 ★）
-DASHSCOPE_API_KEY = "sk-f8f8b8e1132242fda1fc0fc15d1e5516"
-# 嵌入模型名称（文本转向量）
+DASHSCOPE_API_KEY = "请将此处替换为你的阿里云通义千问API密钥并添加进环境变量中"
+# 嵌入模型名称（文本转向量）- 用于向量检索和入库
 embedding_model_name = "text-embedding-v4"
-# 对话模型名称（生成回答）
+# 对话模型名称（生成回答）- 用于答案生成
 chat_model_name = "qwen3-max"
+
+# ===================== MiniMax 模型配置（新增）====================
+# MiniMax API密钥（请替换为你的实际密钥）
+MINIMAX_API_KEY = "请替换为你的MiniMax API密钥"
+# MiniMax 对话模型（仅用于生成回答，不影响向量检索）
+MINIMAX_CHAT_MODEL = "MiniMax-M2.7"
+
+# ===================== 模型切换配置 =====================
+# 支持的模型列表
+# 注意：切换模型仅改变"答案生成模型"，向量检索始终使用 embedding_model_name
+AVAILABLE_MODELS = {
+    "通义千问": {
+        "chat_model_name": "qwen3-max",
+    },
+    "MiniMax M2.7": {
+        "chat_model_name": "MiniMax-M2.7",
+    }
+}
 
 # ===================== 业务配置 =====================
 # 操作员名称（入库元数据用）
