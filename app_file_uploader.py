@@ -210,6 +210,7 @@ def main():
                     continue
 
                 st.subheader(f"正在处理：{file.name}")
+                logger.info(f"开始上传文件: {file.name}")
                 try:
                     # 加载文件（跨页合并/代码支持）
                     documents = load_file_with_langchain(temp_file_path, file_ext)
@@ -219,6 +220,7 @@ def main():
                     with st.spinner("正在载入向量库..."):
                         result = st.session_state["service"].upload_by_documents(processed_docs, filename=file.name)
                         st.success(f"{file.name}：{result}")
+                        logger.info(f"文件上传成功: {file.name}, 文档块数: {len(processed_docs)}")
                 except Exception as e:
                     st.error(f"{file.name} 处理失败：{str(e)}")
                 finally:
@@ -257,6 +259,7 @@ def main():
                     
                     # 确认上传按钮
                     if st.button("🚀 开始批量导入向量库", type="primary"):
+                        logger.info(f"开始批量上传文件夹: {folder_path}, 文件数: {len(code_files)}")
                         with st.spinner(f"正在处理 {len(code_files)} 个文件..."):
                             try:
                                 # 加载文件夹中所有文件
@@ -284,6 +287,7 @@ def main():
                                     
                                     st.success(f"✅ 文件夹 '{filename}' 导入完成：{result}")
                                     st.info(f"📊 共处理 {len(code_files)} 个代码文件，生成了 {len(processed_docs)} 个语义片段")
+                                    logger.info(f"文件夹批量上传成功: {filename}, 处理文件数: {len(code_files)}, 文档块数: {len(processed_docs)}")
                             
                             except Exception as e:
                                 st.error(f"❌ 批量导入失败：{str(e)}")

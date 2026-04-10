@@ -17,12 +17,13 @@ st.set_page_config(
 
 # 初始化全局会话（单例RAG/知识库服务+唯一session_id）
 def init_global_session():
-    # 初始化RAG服务（固定使用通义千问）
+    # 初始化RAG服务（支持模型切换）
     if "rag" not in st.session_state:
         try:
-            # 暂时固定使用通义千问模型
-            st.session_state["rag"] = RagService()
-            logger.info("RAG服务全局初始化成功")
+            # 获取用户选择的模型
+            selected_model = st.session_state.get("selected_model", "通义千问")
+            st.session_state["rag"] = RagService(model_name=selected_model)
+            logger.info(f"RAG服务全局初始化成功，使用模型: {selected_model}")
         except Exception as e:
             st.error(f"RAG服务初始化失败：{str(e)}")
             logger.error(f"RAG初始化失败：{e}", exc_info=True)
@@ -328,36 +329,36 @@ def tab_code_analysis():
 
 # 主函数：标签页整合所有功能
 def main():
-    # ===== 模型切换功能暂时禁用 =====
-    # import config_data as config_model
-    # model_options = list(config_model.AVAILABLE_MODELS.keys())
+    # ===== 模型切换功能 =====
+    import config_data as config_model
+    model_options = list(config_model.AVAILABLE_MODELS.keys())
     
     # 侧边栏：模型选择
-    # st.sidebar.title("⚙️ 模型设置")
-    # selected_model = st.sidebar.selectbox(
-    #     "选择大语言模型：",
-    #     options=model_options,
-    #     index=0,
-    #     key="model_selector"
-    # )
-    
-    # 暂时固定使用通义千问
-    selected_model = "通义千问"
+    st.sidebar.title("⚙️ 模型设置")
+    selected_model = st.sidebar.selectbox(
+        "选择大语言模型：",
+        options=model_options,
+        index=0,
+        key="model_selector"
+    )
     
     # 如果模型变化了，重新初始化
-    # if "selected_model" not in st.session_state or st.session_state.get("selected_model") != selected_model:
-    #     st.session_state["selected_model"] = selected_model
-    #     # 清除现有的RAG服务，触发重新初始化
-    #     if "rag" in st.session_state:
-    #         del st.session_state["rag"]
-    #     if "kb_service" in st.session_state:
-    #         del st.session_state["kb_service"]
-    #     if "vector_service" in st.session_state:
-    #         del st.session_state["vector_service"]
+    if "selected_model" not in st.session_state or st.session_state.get("selected_model") != selected_model:
+        st.session_state["selected_model"] = selected_model
+        logger.info(f"用户切换模型: {selected_model}")
+        # 清除现有的RAG服务，触发重新初始化
+        if "rag" in st.session_state:
+            del st.session_state["rag"]
+        if "kb_service" in st.session_state:
+            del st.session_state["kb_service"]
+        if "vector_service" in st.session_state:
+            del st.session_state["vector_service"]
+        # 切换模型后刷新页面以重新初始化
+        st.rerun()
     
     # 显示当前使用的模型
-    # st.sidebar.markdown(f"当前使用：**{selected_model}**")
-    # st.sidebar.divider()
+    st.sidebar.markdown(f"当前使用：**{selected_model}**")
+    st.sidebar.divider()
     
     # 初始化全局会话
     init_global_session()

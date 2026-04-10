@@ -3,86 +3,93 @@
 # 仅对话模型可以在通义千问和MiniMax之间切换
 from langchain_community.chat_models.tongyi import ChatTongyi
 from langchain_community.embeddings import DashScopeEmbeddings
-from langchain_core.language_models.chat_models import BaseChatModel
 import os
 import config_data as config
+from logger import logger
 
 
 class MiniMaxChat:
-    """MiniMax 大语言模型封装（兼容 LangChain 接口）"""
+    """MiniMax 大语言模型封装（使用官方API）"""
     
     def __init__(self, model_name="MiniMax-M2.7", api_key=None):
         self.model_name = model_name
         # 优先从环境变量读取API密钥
-        env_key = os.getenv("MINIMAX_API_KEY")
-        self.api_key = api_key or env_key
+        self.api_key = api_key or os.getenv("MINIMAX_API_KEY")
         
         if not self.api_key:
-            # 提供更详细的错误信息
             raise ValueError(f"MiniMax API密钥未设置。请在PowerShell中执行: $env:MINIMAX_API_KEY='你的密钥'")
+        
+        logger.info(f"MiniMax API Key loaded: {self.api_key[:10]}...")
+        
+        self.base_url = "https://api.minimax.chat/v1"
     
     def __call__(self, messages):
         """实现兼容 LangChain 的调用方式"""
-        import requests
         
         # 将 LangChain 的 messages 格式转换为 MiniMax 格式
         minimax_messages = []
+        system_prompt = ""
+        
         for msg in messages:
-            # 处理 LangChain 消息对象 - 支持多种格式
-            try:
-                # 情况1: LangChain Message 对象 (AIMessage, HumanMessage, SystemMessage)
+            # 提取 system 消息作为系统提示词
+            if hasattr(msg, 'type') and msg.type == 'system':
+                system_prompt = msg.content
+            elif isinstance(msg, dict) and msg.get('type') == 'system':
+                system_prompt = msg.get('content', '')
+            else:
+                # 其他消息格式
                 if hasattr(msg, 'type') and hasattr(msg, 'content'):
                     role = msg.type
                     content = msg.content
-                # 情况2: 字典格式
                 elif isinstance(msg, dict):
                     role = msg.get('type', 'user')
                     content = msg.get('content', '')
-                # 情况3: 元组格式 (type, content)
-                elif isinstance(msg, (tuple, list)):
-                    if len(msg) >= 2:
-                        role = msg[0] if isinstance(msg[0], str) else 'user'
-                        content = str(msg[1]) if len(msg) > 1 else ''
-                    else:
-                        continue
-                # 情况4: 其他情况
                 else:
                     role = 'user'
                     content = str(msg)
-            except Exception as e:
-                # 如果解析失败，使用默认值
-                role = 'user'
-                content = str(msg) if msg else ''
+                
+                # MiniMax 消息格式
+                minimax_messages.append({
+                    "role": role,
+                    "content": content
+                })
+        
+        # 使用 requests 调用 MiniMax API
+        try:
+            import requests
             
-            # MiniMax 角色映射 (user/assistant/system)
-            minimax_messages.append({
-                "role": role,
-                "content": content
-            })
-        
-        url = "https://api.minimax.chat/v1/text/chatcompletion_v2"
-        
-        # 确保 API 密钥正确格式化
-        auth_key = self.api_key.strip()
-        
-        headers = {
-            "Authorization": f"Bearer {auth_key}",
-            "Content-Type": "application/json"
-        }
-        
-        data = {
-            "model": self.model_name,
-            "messages": minimax_messages
-        }
-        
-        response = requests.post(url, headers=headers, json=data, timeout=60)
-        result = response.json()
-        
-        if "choices" in result and len(result["choices"]) > 0:
-            content = result["choices"][0]["message"]["content"]
-            return content
-        else:
-            raise RuntimeError(f"MiniMax API调用失败: {result}")
+            url = f"{self.base_url}/text/chatcompletion_pro"
+            
+            # 尝试不带Bearer前缀
+            headers = {
+                "Authorization": self.api_key,
+                "Content-Type": "application/json"
+            }
+            
+            payload = {
+                "model": self.model_name,
+                "messages": [{"role": "system", "content": system_prompt}] + minimax_messages if system_prompt else minimax_messages,
+                "max_tokens": 4096,
+                "temperature": 0.7
+            }
+            
+            logger.info(f"Calling MiniMax API: {url}")
+            response = requests.post(url, headers=headers, json=payload, timeout=60)
+            logger.info(f"Response status: {response.status_code}")
+            
+            result = response.json()
+            logger.info(f"Response body: {result}")
+            
+            # 提取文本内容
+            if "choices" in result and len(result["choices"]) > 0:
+                return result["choices"][0]["message"]["content"]
+            elif "base_resp" in result and result["base_resp"]["status_code"] != 0:
+                raise RuntimeError(f"MiniMax API error: {result['base_resp']['status_msg']}")
+            else:
+                raise RuntimeError(f"MiniMax API 返回格式异常: {result}")
+        except Exception as e:
+            logger.error(f"MiniMax API 调用失败: {str(e)}")
+            raise
 
 
 def get_chat_model(model_name: str):
@@ -91,9 +98,11 @@ def get_chat_model(model_name: str):
     :param model_name: 模型名称（如 qwen3-max, MiniMax-M2.7）
     :return: 兼容 LangChain 的聊天模型实例
     """
-    if model_name == "MiniMax-M2.7":
+    if model_name == "MiniMax-M2.7" or model_name == "MiniMax M2.7":
+        logger.info(f"创建MiniMax对话模型实例: {model_name}")
         return MiniMaxChat(model_name=model_name)
     else:
+        logger.info(f"创建通义千问对话模型实例: {model_name}")
         # 默认使用通义千问
         return ChatTongyi(model=model_name)
 
